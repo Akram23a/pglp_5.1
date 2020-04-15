@@ -1,18 +1,24 @@
 package PGL.pglp_5_1;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 /**
  * 
  * @author Akram
  *
  */
-public class Personnel {
+public class Personnel implements Component, Serializable {
 
-	public String nom;
-	public String prenom;
-	public String fonction;
-	public LocalDate dateNaissance;
-	public ArrayList<NumTel> numsTel;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final String nom;
+	private final String prenom;
+	private final String fonction;
+	private final LocalDate dateNaissance;
+	private ArrayList<NumTel> numsTel;
 	/**
 	 * 
 	 * @author Akram
@@ -20,11 +26,12 @@ public class Personnel {
 	 */
 	public static class PBuilder {
 		
-		public String nom;
-		public String prenom;
-		public String fonction;
+		public final String nom;
+		public final String prenom;
+		public final String fonction;
 		public LocalDate dateNaissance;
-		public ArrayList<NumTel> numsTelephone;
+		public final ArrayList<NumTel> numsTelephone;
+        private final int id;
 		/**
 		 * 
 		 * @param nom
@@ -32,18 +39,20 @@ public class Personnel {
 		 * @param fonction
 		 * @param dateNaissance
 		 */
-		public PBuilder(String nom, String prenom, String fonction, LocalDate dateNaissance) {
+		public PBuilder(final String nom, final String prenom, final String fonction, final LocalDate dateNaissance, final int newId) {
 			this.nom = nom;
 			this.prenom = prenom;
 			this.fonction = fonction;
-			this.dateNaissance= dateNaissance;
+			this.dateNaissance = dateNaissance;
+            this.numsTelephone = new ArrayList<NumTel>();
+            this.id = newId;
 		}
 		/**
 		 * 
 		 * @param dN
 		 * @return
 		 */
-		public  PBuilder Naissance(LocalDate dN) {
+		public  PBuilder Naissance(final LocalDate dN) {
 			
 			this.dateNaissance = dN;
 			return this;
@@ -52,7 +61,7 @@ public class Personnel {
 		/**
 		 * 
 		 * @param num
-		 * @return
+		 * @return Builder
 		 */
 		public PBuilder numsTelephone(NumTel num) {
 			this.numsTelephone.add(num);
@@ -60,10 +69,13 @@ public class Personnel {
 		}
 		/**
 		 * 
-		 * @return
+		 * @return built personnel
 		 */
 		public Personnel build() {
 			return new Personnel(this);
+		}
+		public int getId() {
+			return id;
 		}
 	}
 	/**
@@ -75,7 +87,7 @@ public class Personnel {
 		prenom = builder.prenom;
 		fonction = builder.fonction;
 		dateNaissance = builder.dateNaissance;
-		numsTel = builder.numsTelephone;
+		setNumsTel(builder.numsTelephone);
 	}
 	/**
 	 * 
@@ -83,5 +95,19 @@ public class Personnel {
 	public void print() {
 		System.out.println("Nom: "+ nom + "\nPrenom : " + prenom + " \nFonction: " 
 		+ fonction + "\ndate de naissance: "+ dateNaissance + "\n");
+	}
+	/**
+	 * 
+	 * @return numeros
+	 */
+	public ArrayList<NumTel> getNumsTel() {
+		return numsTel;
+	}
+	/**
+	 *  
+	 * @param numsTel numeros
+	 */
+	public void setNumsTel(ArrayList<NumTel> numsTel) {
+		this.numsTel = numsTel;
 	}
 }

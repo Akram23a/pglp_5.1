@@ -1,5 +1,54 @@
 package PGL.pglp_5_1;
-
-public class NumTel {
-
+import java.io.Serializable;
+/**
+ * 
+ * @author Akram
+ *
+ */
+public class NumTel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	private String numero;
+	private int id;
+	
+	/**
+	 * 
+	 * @param num numero
+	 */
+	NumTel(String num){
+		setNumero(num);
+	}
+	/**
+	 * 
+	 * @return numero
+	 */
+	public String getNumero() {
+		return numero;
+	}
+	/**
+	 * 
+	 * @param numero
+	 */
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	/**
+	 * 
+	 * @return id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * 
+	 * @param id l'identifiant
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 }
