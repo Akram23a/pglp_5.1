@@ -9,7 +9,7 @@ public class DAOFactory {
     public static DAO<Personnel> getPersonnelDAO() {
         return new PersonnelDAO();
     }
-    public static DAO<GroupePersonnels> getGroupePersonnelsDAO() {
+    public static DAO<GroupePersonnel> getGroupePersonnelsDAO() {
         return new GroupePersonnelDAO();
     }
 }

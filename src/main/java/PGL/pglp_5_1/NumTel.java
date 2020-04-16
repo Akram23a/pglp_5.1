@@ -51,4 +51,10 @@ public class NumTel implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
+	/**
+	 * 
+	 */
+    public void update(final String nm) {
+        this.setNumero(nm);
+    }
 }
