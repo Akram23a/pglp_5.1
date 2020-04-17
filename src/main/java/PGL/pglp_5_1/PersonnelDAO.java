@@ -78,8 +78,11 @@ public class PersonnelDAO extends DAO<Personnel>{
         }
         return null;
     }
-	
-	  public void serialize(final String path) {
+	/**
+	 * 
+	 * @param path to file
+	 */
+	 public void serialize(final String path) {
 	      ObjectOutputStream writer = null;
 	      try {
 	          FileOutputStream file = new FileOutputStream(path);
@@ -101,7 +104,11 @@ public class PersonnelDAO extends DAO<Personnel>{
 	          e2.printStackTrace();
 	      }
 	  }
-	  
+	  /**
+	   * 
+	   * @param path to file
+	   * @return instance
+	   */
 	  public static PersonnelDAO deserialize(final String path) {
 	      ObjectInputStream reader = null;
 	      PersonnelDAO personnelDAO = null;

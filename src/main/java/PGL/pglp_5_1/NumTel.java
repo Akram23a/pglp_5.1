@@ -46,15 +46,15 @@ public class NumTel implements Serializable{
 	}
 	/**
 	 * 
-	 * @param id l'identifiant
+	 * @param id identifier
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 	/**
-	 * 
+	 * update func
 	 */
     public void update(final String nm) {
-        this.setNumero(nm);
+		// TODO Auto-generated method stub
     }
 }

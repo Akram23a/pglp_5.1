@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
  * 
  * @author Akram
  *
- * @param <T>
+ * @param <T> to choose
  */
 public abstract class DAO<T> {
 	/**

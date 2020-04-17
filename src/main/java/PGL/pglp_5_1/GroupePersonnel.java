@@ -90,7 +90,9 @@ public class GroupePersonnel implements Component,Serializable{
 	public void setNom(String nomY) {
 		this.nom = nomY;
 	}
-	
+	/**
+	 * Names
+	 */
 	public void skull() {
 	        Iterator<Component> ite = childComp.iterator();
 	        System.out.println("|" + this.getNom() + "|");
@@ -99,6 +101,9 @@ public class GroupePersonnel implements Component,Serializable{
 	            c.print();		
 	        }
 	}
+	/**
+	 * Update to do
+	 */
 	public void update() {
 		// TODO Auto-generated method stub
 		

@@ -4,10 +4,24 @@ package PGL.pglp_5_1;
  * Hello world!
  *
  */
-public class App 
+public enum App 
 {
+	/**
+	 * main stuff
+	 */
+    ENVIRONNEMENT;
+	/**
+	 * Exec
+	 */
+	public void run() {
+
+	}
+	/**
+	 * 
+	 * @param args
+	 */
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	ENVIRONNEMENT.run();
     }
 }
