@@ -36,8 +36,10 @@ public abstract class DAO<T> {
      * 
      * @param id
      * @return
+     * @throws IOException 
+     * @throws ClassNotFoundException 
      */
-    public abstract T find(int id);
+    public abstract T find(int id) throws IOException, ClassNotFoundException;
     /**
      * 
      * @param bytes

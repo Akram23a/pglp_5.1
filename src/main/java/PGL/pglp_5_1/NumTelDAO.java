@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
 
 public class NumTelDAO extends DAO<NumTel>{
 
@@ -39,7 +40,7 @@ public class NumTelDAO extends DAO<NumTel>{
         	}		
         }
 	}
-
+	
 	@Override
 	public NumTel update(NumTel obj) throws IOException {
         String nomDir = "NumsTel";
@@ -60,7 +61,7 @@ public class NumTelDAO extends DAO<NumTel>{
 	}
 
 	@Override
-	public NumTel find(int id) {
+	public NumTel find(int id) throws IOException, ClassNotFoundException {
 		  String nomDir = "NumsTel";
 	        File dir = new File(nomDir);
 	        File search = new File(nomDir + "\\" + id + ".txt");
@@ -69,14 +70,10 @@ public class NumTelDAO extends DAO<NumTel>{
 	            if (search.exists()) {
 	                byte[] fileContent = Files.readAllBytes(search.toPath());
 	                deserialized = deserialize(fileContent);
-	            } else {
-	                System.out.println("Le fichier n'existe pas!");
 	            }
-	            NumeroTelephone num = (NumeroTelephone) deserialized;
+	            NumTel num = (NumTel) deserialized;
 	            System.out.println(num.toString());
 	            return num;
-	        } else {
-	            System.out.println("Le dossier n'existe pas!");
 	        }
 	        return null;	
 	    }
