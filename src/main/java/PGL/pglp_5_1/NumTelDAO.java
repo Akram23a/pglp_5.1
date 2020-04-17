@@ -35,9 +35,7 @@ public class NumTelDAO extends DAO<NumTel>{
             File file = new File(nomDir + "\\" + obj.getId() + ".txt");
             if (file.exists()) {
                 file.delete();
-        } else {
-            System.out.println("File does not exist!");
-        	}		
+            }	
         }
 	}
 	
@@ -49,13 +47,9 @@ public class NumTelDAO extends DAO<NumTel>{
             File file = new File(nomDir + "\\" + obj.getId() + ".txt");
             if (file.exists()) {
                 file.delete();
-//                obj.update("222");
+                obj.update("222");
                 this.create(obj);
-            } else {
-                System.out.println("Le fichier à mettre à jour n'existe pas!");
             }
-        } else {
-            System.out.println("Le dossier contenant le fichier n'existe pas!");
         }
         return obj;
 	}

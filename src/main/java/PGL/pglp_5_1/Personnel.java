@@ -14,10 +14,26 @@ public class Personnel implements Component, Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+    private final int id;
+	/**
+	 * Name
+	 */
 	private final String nom;
+	/**
+	 * first name
+	 */
 	private final String prenom;
+	/**
+	 * function
+	 */
 	private final String fonction;
+	/**
+	 * date of birth
+	 */
 	private final LocalDate dateNaissance;
+	/**
+	 * phone number
+	 */
 	private ArrayList<NumTel> numsTel;
 	/**
 	 * 
@@ -34,10 +50,10 @@ public class Personnel implements Component, Serializable {
         private final int id;
 		/**
 		 * 
-		 * @param nom
-		 * @param prenom
-		 * @param fonction
-		 * @param dateNaissance
+		 * @param nom name
+		 * @param prenom first name
+		 * @param fonction function
+		 * @param dateNaissance date of birth
 		 */
 		public PBuilder(final String nom, final String prenom, final String fonction, final LocalDate dateNaissance, final int newId) {
 			this.nom = nom;
@@ -88,6 +104,7 @@ public class Personnel implements Component, Serializable {
 		fonction = builder.fonction;
 		dateNaissance = builder.dateNaissance;
 		setNumsTel(builder.numsTelephone);
+		this.id = builder.id;
 	}
 	/**
 	 * 
@@ -109,5 +126,13 @@ public class Personnel implements Component, Serializable {
 	 */
 	public void setNumsTel(ArrayList<NumTel> numsTel) {
 		this.numsTel = numsTel;
+	}
+	public int getId() {
+		// TODO Auto-generated method stub
+		return this.id;
+	}
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 }
