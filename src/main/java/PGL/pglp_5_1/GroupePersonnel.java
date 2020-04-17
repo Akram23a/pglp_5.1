@@ -21,6 +21,10 @@ public class GroupePersonnel implements Component,Serializable{
      */
     private int id;
     /**
+     * nom
+     */
+    private String nom;
+    /**
      * 
      * @param comp componenet to add
      */
@@ -66,9 +70,33 @@ public class GroupePersonnel implements Component,Serializable{
 	}
 	/**
 	 * 
-	 * @param id new id
+	 * @param id new nom
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	/**
+     * 
+     * @return nom
+     */
+	public String getNom() {
+		return nom;
+	}
+	/**
+	 * 
+	 * @param nomY us the new name
+	 */
+	public void setNom(String nomY) {
+		this.nom = nomY;
+	}
+	
+	public void skull() {
+	        Iterator<Component> ite = childComp.iterator();
+	        System.out.println("|" + this.getNom() + "|");
+	        while (ite.hasNext()) {
+	            Component c = ite.next();
+	            c.print();		
+	        }
 	}
 }
