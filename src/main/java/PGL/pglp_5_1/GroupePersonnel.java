@@ -99,4 +99,8 @@ public class GroupePersonnel implements Component,Serializable{
 	            c.print();		
 	        }
 	}
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 }
