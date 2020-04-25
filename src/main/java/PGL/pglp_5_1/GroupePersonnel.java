@@ -26,6 +26,15 @@ public class GroupePersonnel implements Component,Serializable{
     private String nom;
     /**
      * 
+     * @param nom
+     * @param id2
+     */
+    public GroupePersonnel(final String newNom, final int newId) {
+        this.nom = newNom;
+        this.setId(newId);
+    }
+    /**
+     * 
      * @param comp componenet to add
      */
     public void add(Component comp) {

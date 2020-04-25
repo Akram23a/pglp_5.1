@@ -113,13 +113,6 @@ public class Personnel implements Component, Serializable {
 	}
 	/**
 	 * 
-	 */
-	public void print() {
-		System.out.println("Nom: "+ nom + "\nPrenom : " + prenom + " \nFonction: " 
-		+ fonction + "\ndate de naissance: "+ dateNaissance + "\n");
-	}
-	/**
-	 * 
 	 * @return numeros
 	 */
 	public ArrayList<NumTel> getNumsTel() {
@@ -133,11 +126,52 @@ public class Personnel implements Component, Serializable {
 		this.numsTel = numsTel;
 	}
 	public int getId() {
-		// TODO Auto-generated method stub
 		return this.id;
 	}
 	public void update() {
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * 
+	 * @return nom
+	 */
+    public String getNom() {
+        return nom;
+    }
+    /**
+     * 
+     * @return pnom
+     */
+    public String getPrenom() {
+        return prenom;
+    }
+    /**
+     * 
+     * @return fct
+     */
+    public String getFonction() {
+        return fonction;
+    }
+    /**
+     * 
+     * @return date naissance
+     */
+    public LocalDate getDateNaissance() {
+        return dateNaissance;
+    }
+    /**
+     * 
+     * @return nums de telephone
+     */
+    public ArrayList<NumTel> getNumTelephones() {
+        return numsTel;
+    }
+
+    public void print() {
+        System.out.println(this.nom + " " + this.prenom + ": \nfonction: "
+                + this.fonction + "\ndate de naissance: "
+                + this.dateNaissance + "\n");
+    }
 }
+
