@@ -3,22 +3,18 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.time.LocalDate;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import PGL.pglp_5_1.Personnel.PBuilder;
 /**
- * Classe de tests pour la classe Personnel.
- * @author Nathalie
+ * 
+ * @author Akram
  *
  */
 public class PersonnelTest {
@@ -31,7 +27,10 @@ public class PersonnelTest {
  
     DAO<Personnel> personnel;
   
-
+/**
+ * 
+ * @throws IOException
+ */
     @Before
     public void setUp() throws IOException {
         nomDir = "PersonnelDAO";
@@ -46,7 +45,9 @@ public class PersonnelTest {
         Personnel p = b.build();
         directeur = p;
     }
-
+/**
+ * 
+ */
     @Test
     public void constructeurTest() {
         String num = "011111111";
@@ -67,14 +68,11 @@ public class PersonnelTest {
         ObjectInputStream o = new ObjectInputStream(b);
         return o.readObject();
     }
-
-//    private byte[] serialize(final Object obj) throws IOException {
-//        ByteArrayOutputStream b = new ByteArrayOutputStream();
-//        ObjectOutputStream o = new ObjectOutputStream(b);
-//        o.writeObject(obj);
-//        return b.toByteArray();
-//    }
-
+/**
+ * 
+ * @throws IOException
+ * @throws ClassNotFoundException
+ */
     @Test
     public void createTest() throws IOException, ClassNotFoundException {       
         personnel.create(directeur);
@@ -133,7 +131,11 @@ public class PersonnelTest {
 //        assertEquals(expected, directeur);
         personnel.delete(directeur);
     }  
-
+/**
+ * 
+ * @throws IOException
+ * @throws ClassNotFoundException
+ */
     @Test
     public void findTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + directeur.getId() + ".txt");

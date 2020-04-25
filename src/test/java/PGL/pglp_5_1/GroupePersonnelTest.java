@@ -10,22 +10,28 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+/**
+ * 
+ * @author Akram
+ *
+ */
 public class GroupePersonnelTest {  
-   
+	
     GroupePersonnel g, g2, g3;
  
     File dir;
-  
+    
     DAO<NumTel> numTel;
 
     String nomDir;
-  
+    
     DAO<GroupePersonnel> groupePersoDAO;
-
+    /**
+     * 
+     * @throws IOException
+     */
     @Before
     public void setUp() throws IOException {
         nomDir = "Groups";
@@ -37,14 +43,18 @@ public class GroupePersonnelTest {
         
         groupePersoDAO = DAOFactory.getGroupePersonnelsDAO();
     }
-
+    /**
+     * 
+     */
     @Test
     public void addTest() {
 
         g.add(g2);
         assertEquals(g.getGroup().get(0), g2);
     }
-
+    /**
+     * 
+     */
     @Test
     public void removeTest() {
         g.add(g2);
@@ -58,14 +68,23 @@ public class GroupePersonnelTest {
         ObjectInputStream o = new ObjectInputStream(b);
         return o.readObject();
     }
-  
+    /**
+     * 
+     * @param obj
+     * @return
+     * @throws IOException
+     */
     private byte[] serialize(final Object obj) throws IOException {
         ByteArrayOutputStream b = new ByteArrayOutputStream();
         ObjectOutputStream o = new ObjectOutputStream(b);
         o.writeObject(obj);
         return b.toByteArray();
     }
-
+    /**
+     * 
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @Test
     public void createTest() throws IOException, ClassNotFoundException {       
         groupePersoDAO.create(g);
@@ -84,7 +103,11 @@ public class GroupePersonnelTest {
         groupePersoDAO.delete(g);
         dir.delete();
     }
-  
+    /**
+     * 
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @Test
     public void deleteTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + g.getId() + ".txt");
@@ -98,6 +121,11 @@ public class GroupePersonnelTest {
         assertTrue(expected.exists());
         groupePersoDAO.delete(g2);
     }
+    /**
+     * 
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @Test
     public void updateTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + g.getId() + ".txt");
@@ -114,7 +142,12 @@ public class GroupePersonnelTest {
         assertTrue(search.exists());
 //        assertEquals(expected, g);
         groupePersoDAO.delete(g);
-    }  
+    }
+    /**
+     * 
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @Test
     public void findTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + g.getId() + ".txt");

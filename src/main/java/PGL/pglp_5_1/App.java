@@ -1,11 +1,9 @@
 package PGL.pglp_5_1;
-
 /**
  * Hello world!
  *
  */
-public enum App 
-{
+public enum App {
 	/**
 	 * main stuff
 	 */
@@ -20,8 +18,7 @@ public enum App
 	 * 
 	 * @param args
 	 */
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
     	ENVIRONNEMENT.run();
     }
 }

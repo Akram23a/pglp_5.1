@@ -7,9 +7,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
-
-public class PersonnelDAO extends DAO<Personnel>{
-
+/**
+ * 
+ * @author Akram
+ *
+ */
+public class PersonnelDAO extends DAO<Personnel> {
 	@Override
 	public Personnel create(Personnel obj) throws IOException {
         String nomDir = "PersonnelDAO";
@@ -29,7 +32,6 @@ public class PersonnelDAO extends DAO<Personnel>{
         objOut.close();
         return obj;	
 	}
-
 	@Override
 	public void delete(Personnel obj) {
 	     String nomDir = "PersonnelDAO";
@@ -42,7 +44,6 @@ public class PersonnelDAO extends DAO<Personnel>{
 	            }
 	        }
 	    }
-
 	@Override
 	public Personnel update(Personnel obj)    throws IOException {
         String nomDir = "PersonnelDAO";
@@ -59,7 +60,6 @@ public class PersonnelDAO extends DAO<Personnel>{
         }
         return obj;
 	}
-
 	@Override
 	public Personnel find(int id) 
 			throws IOException, ClassNotFoundException {

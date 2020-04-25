@@ -1,9 +1,4 @@
 package PGL.pglp_5_1;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,7 +9,6 @@ import java.util.ArrayList;
  *
  */
 public class Personnel implements Component, Serializable {
-
 	/**
 	 * 
 	 */
@@ -71,9 +65,9 @@ public class Personnel implements Component, Serializable {
 		/**
 		 * 
 		 * @param dN
-		 * @return
+		 * @return this
 		 */
-		public  PBuilder Naissance(final LocalDate dN) {
+		public PBuilder Naissance(final LocalDate dN) {
 			
 			this.dateNaissance = dN;
 			return this;
@@ -167,7 +161,9 @@ public class Personnel implements Component, Serializable {
     public ArrayList<NumTel> getNumTelephones() {
         return numsTel;
     }
-
+    /**
+     * print func
+     */
     public void print() {
         System.out.println(this.nom + " " + this.prenom + ": \nfonction: "
                 + this.fonction + "\ndate de naissance: "

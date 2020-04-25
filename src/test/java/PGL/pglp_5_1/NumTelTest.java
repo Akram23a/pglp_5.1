@@ -35,7 +35,9 @@ public class NumTelTest {
     }
 
 
-
+/**
+ * 
+ */
     @Test
     public void getNumeroTest() {
         String expected = "0222222222";
@@ -47,14 +49,11 @@ public class NumTelTest {
         ObjectInputStream o = new ObjectInputStream(b);
         return o.readObject();
     }
-
-//    private byte[] serialize(final Object obj) throws IOException {
-//        ByteArrayOutputStream b = new ByteArrayOutputStream();
-//        ObjectOutputStream o = new ObjectOutputStream(b);
-//        o.writeObject(obj);
-//        return b.toByteArray();
-//    }
-
+    /**
+     * 
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     @Test
     public void createTest() throws IOException, ClassNotFoundException {       
         numTel.create(tel);
@@ -74,7 +73,11 @@ public class NumTelTest {
         numTel.delete(tel);
         dir.delete();
     }
-
+/**
+ * 
+ * @throws IOException
+ * @throws ClassNotFoundException
+ */
     @Test
     public void deleteTest() throws IOException, ClassNotFoundException {      
     	NumTel tel2 = new NumTel("0333333333", 3);
@@ -89,7 +92,11 @@ public class NumTelTest {
         assertTrue(expected.exists());
         numTel.delete(tel2);
     }
-
+/**
+ * 
+ * @throws IOException
+ * @throws ClassNotFoundException
+ */
     @Test
     public void updateTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + tel.getId() + ".txt");
@@ -108,7 +115,11 @@ public class NumTelTest {
         assertEquals(expected, tel2);
         numTel.delete(tel);
     }  
-
+/**
+ * 
+ * @throws IOException
+ * @throws ClassNotFoundException
+ */
     @Test
     public void findTest() throws IOException, ClassNotFoundException {      
         File search = new File(nomDir + "\\" + tel.getId() + ".txt");

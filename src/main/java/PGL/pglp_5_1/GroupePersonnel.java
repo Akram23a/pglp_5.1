@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author Akram
  *
  */
-public class GroupePersonnel implements Component,Serializable{
+public class GroupePersonnel implements Component,Serializable {
 	/**
 	 * 
 	 */
@@ -59,7 +59,7 @@ public class GroupePersonnel implements Component,Serializable{
      * 
      * @return
      */
-    public ArrayList<Component> getGroup(){
+    public ArrayList<Component> getGroup() {
     	return childComp;
     }
     /**
@@ -84,7 +84,6 @@ public class GroupePersonnel implements Component,Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
 	/**
      * 
      * @return nom
